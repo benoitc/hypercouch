@@ -19,6 +19,7 @@ There are a couple dependancies that should hopefully be easy to overcome. I hav
 OpenBSD: 
     $ pkg_add -iv py-simplejson
     $ pkg_add -iv py-httplib2
+    $ pkg_add -iv py-nose
 
 OS X python modules:
 
