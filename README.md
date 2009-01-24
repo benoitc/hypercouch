@@ -63,7 +63,7 @@ Ubuntu:
 
 Openbsd:
 
-Install from source:
+Install Hyperestraier from sources:
     
     $ pkg_add -iv qdbm
     $ ftp http://hyperestraier.sourceforge.net/hyperestraier-1.4.13.tar.gz
