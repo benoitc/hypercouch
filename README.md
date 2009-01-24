@@ -24,11 +24,13 @@ OS X python modules:
 
     $ sudo port install py25-simplejson
     $ sudo port install py25-httplib2
-
+    $ sudo port install py25-nose
+    
 Ubuntu:
 
     $ sudo apt-get install simplejson
     $ sudo apt-get isntall httplib2
+    $ sudo apt-get install python-nose
 
 And couchdb-python:
 
