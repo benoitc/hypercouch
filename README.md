@@ -149,10 +149,10 @@ It may take a few seconds before the indexed results become available. There's n
 1. `highlight` - Retrieve a highlighted snipped. Currently only supports an html format via `highlight=html`
 1. Other attribute limiting via `attr_name=METHOD param` See [Search Conditions][hypersearching] for specifics.
 
-[couchdb] http://couchdb.apache.org "CouchDB"
-[hyper] http://hyperestraier.sourceforge.net/ "Hyper Estraier"
-[spider] http://www.mozilla.org/js/spidermonkey/ "Spidermonkey"
-[hypy] http://www.goonmill.org/hypy/ "Hypy"
-[pyspider] http://github.com/davisp/python-spidermonkey/tree/master "Python Spidermonkey"
-[hypercouch] http://github.com/davisp/python-spidermonkey/tree/master "HyperCouch"
-[hypersearching] http://hyperestraier.sourceforge.net/uguide-en.html#searchcond "Hyper Estraier Searching"
+[couchdb]:http://couchdb.apache.org "CouchDB"
+[hyper]:http://hyperestraier.sourceforge.net/ "Hyper Estraier"
+[spider]:http://www.mozilla.org/js/spidermonkey/ "Spidermonkey"
+[hypy]:http://www.goonmill.org/hypy/ "Hypy"
+[pyspider]:http://github.com/davisp/python-spidermonkey/tree/master "Python Spidermonkey"
+[hypercouch]:http://github.com/davisp/python-spidermonkey/tree/master "HyperCouch"
+[hypersearching]:http://hyperestraier.sourceforge.net/uguide-en.html#searchcond "Hyper Estraier Searching"
