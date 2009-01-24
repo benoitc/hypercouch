@@ -24,6 +24,7 @@ def options():
 def requests():
     line = sys.stdin.readline()
     while line:
+        #sys.stderr.write("%s\n\n" % line.strip())
         yield simplejson.loads(line)
         line = sys.stdin.readline()
 
@@ -37,7 +38,10 @@ def main():
     idx = hypercouch.index.Index(opts.dir, opts.uri)
     try:
         for req in requests():
-            resp = idx.query(req)
+            try: 
+                resp = idx.query(req)
+            except Exception, inst:
+                resp = {"code": 500, "body": str(inst)}
             sys.stdout.write("%s\n" % simplejson.dumps(resp))
             sys.stdout.flush()
     finally:
