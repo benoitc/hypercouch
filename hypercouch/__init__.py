@@ -9,7 +9,11 @@ import optparse as op
 import os
 import sys
 
-import simplejson
+#python 2.6
+try:
+    import simplejson as json
+except ImportError:
+    import json
 
 import hypercouch.index
 
@@ -25,7 +29,7 @@ def requests():
     line = sys.stdin.readline()
     while line:
         #sys.stderr.write("%s\n\n" % line.strip())
-        yield simplejson.loads(line)
+        yield json.loads(line)
         line = sys.stdin.readline()
 
 def main():
@@ -42,7 +46,7 @@ def main():
                 resp = idx.query(req)
             except Exception, inst:
                 resp = {"code": 500, "body": str(inst)}
-            sys.stdout.write("%s\n" % simplejson.dumps(resp))
+            sys.stdout.write("%s\n" % json.dumps(resp))
             sys.stdout.flush()
     finally:
         idx.close()

@@ -16,6 +16,10 @@ There are a couple dependancies that should hopefully be easy to overcome. I hav
 1. [python-spidermonkey][pyspider] - **My version on github**
 1. [hypercouch][hypercouch] - This project?
 
+OpenBSD: 
+    $ pkg_add -iv py-simplejson
+    $ pkg_add -iv py-httplib2
+
 OS X python modules:
 
     $ sudo port install py25-simplejson
@@ -57,6 +61,16 @@ Ubuntu:
 
     $ sudo apt-get install libestraier-dev
 
+Openbsd:
+
+Install from source:
+    
+    $ pkg_add -iv qdbm
+    $ ftp http://hyperestraier.sourceforge.net/hyperestraier-1.4.13.tar.gz
+    $ tar xvzf hyperestraier-1.4.13.tar.gz
+    $ cd hyperestraier-1.4.13
+    $ ./configure && gmake && gmake install
+
 
 Spidermonkey
 ------------
@@ -68,6 +82,10 @@ Spidermonkey is similar
 Ubuntu:
 
     $ sudo apt-get install libmozjs-dev
+
+OpenBSD:
+    
+    $ pkg_add -iv spidermonkey
 
 Activation Errors
 -----------------
@@ -99,7 +117,8 @@ To:
     ext = Extension("_estraiernative",
                     ["estraiernative.c"],
                     libraries=["estraier"],
-                    include_dirs=["/usr/include/estraier", "/usr/include/qdbm", "/opt/local/include/"],
+                    library_dirs=["/usr/local/lib", "/usr/lib"],
+                    include_dirs=["/usr/local/include", "/usr/include/estraier", "/usr/include/qdbm", "/opt/local/include/"],
                     )
 
 Hopefully that builds just dandy for you.

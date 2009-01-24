@@ -14,8 +14,12 @@ import urllib
 
 import couchdb
 import hypy
-import simplejson
 import spidermonkey
+
+try:
+    import simplejson as json
+except ImportError:
+    import json
 
 class PurgeIndexRequired(Exception):
     def __init__(self, dbname, mesg):
@@ -217,12 +221,12 @@ class Index(object):
         if not os.path.exists(fname):
             return 0
         with open(fname) as handle:
-            self.state = simplejson.loads(handle.read())
+            self.state = json.loads(handle.read())
 
     def write_state(self):
         fname = os.path.join(self.idxdir, "couchdb.state")
         with open(fname, "w") as handle:
-            handle.write("%s" % simplejson.dumps(self.state))
+            handle.write("%s" % json.dumps(self.state))
 
     def mk_uri(self, dbname, docid):
         return u"/%s/%s" % (urllib.quote(dbname), urllib.quote(docid))

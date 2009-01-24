@@ -1,2 +1,6 @@
 *.pyc
 build/**/*
+*.swpp
+build
+dist
+hypercouch.egg-info 
