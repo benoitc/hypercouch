@@ -3,7 +3,8 @@ HyperCouch
 
 Full text indexing for [CouchDB][couchdb]. (I really mean it this time.)
 
-== Requriements ==
+Requriements
+------------
 
 There are a couple dependancies that should hopefully be easy to overcome. I have things working on OS X 10.4 so Linux should be a breeze. Windows installation is left as an exercise to the reader.
 
@@ -17,23 +18,27 @@ There are a couple dependancies that should hopefully be easy to overcome. I hav
 
 For the moment I haven't performed this installation on Linux. Tomorrow I'll sit down and install on one of my severs but for now I'll just go over the OS X procedure and hope the Linux equivalent isn't too far off.
 
-== Installation ==
+Installation
+------------
 
 I won't go over installing CouchDB because it's pretty well covered on the [wiki][wiki]. If you need help with it check there or hop onto the IRC channel (#couchdb on irc.freenode.net) and ask questions.
 
-=== HyperEstraier ===
+HyperEstraier
+-------------
 
 HyperEstraier should probably be in your package manager. On OS X it's merely:
 
     $ sudo port install hyperestraier
 
-=== Spidermonkey ===
+Spidermonkey
+------------
 
 Spidermonkey is similar
 
     $ sudo port install spidermonkey
 
-=== Activation Errors ===
+Activation Errors
+-----------------
 
 If either of your port commands fails due to activation conflicts, you can just deactivate and then rerun the install to get things right:
 
@@ -42,7 +47,8 @@ If either of your port commands fails due to activation conflicts, you can just 
 
 Hopefully that was the hard part. The rest of the stuff is just about getting the python bindings installed.
 
-=== HyPy ===
+HyPy
+----
 
 For me hypy was easy to install with the caveat that I had to make a minor tweak to `setup.py` to help it find HyperEstraier installed by `ports`. We just need to add `/opt/local/include` to the list of include directories:
 
@@ -64,7 +70,8 @@ To:
 
 Hopefully that builds just dandy for you.
 
-=== python-spidermonkey ====
+python-spidermonkey
+-------------------
 
 I actually had to download and patch this project to allow the execution of JavaScript functions from Python. I'm very unsure of the build stability but hopefully it works without too much effort. For the time being you can either `git clone` it or download the tarball to install. At some point in the near future I'm going to give it a more thorough re-working to make it a real project.
 
@@ -84,7 +91,8 @@ Installing:
     $ python setup.py build
     $ sudo python setup.py isntall
 
-=== HyperCouch ===
+HyperCouch
+----------
 
 Installing HyperCouch should be relatively straight forward. Just `git clone` or download the tarball and install.
 
@@ -103,7 +111,8 @@ Installing:
 
     $ sudo python setup.py install
 
-=== Configuring CouchDB ===
+Configuring CouchDB
+-------------------
 
 You'll need to edit your `local.ini` or alternatively your `local_dev.ini` if you're a fan of `make dev` like I am.
 
@@ -115,7 +124,8 @@ You'll need to edit your `local.ini` or alternatively your `local_dev.ini` if yo
 
 Alternatively, in your `[external]` section you can use `/path/to/hypercouch/dev.sh` without installing to make dev work easier for when you start submitting bug reports and patches. (This avoids the constant `sudo python setup.py install` running when you change `hypercouch` sources.)
 
-=== Using HyperCouch ===
+Using HyperCouch
+----------------
 
 To use `hypercouch` all you need to do is add a JavaScript function to your `_design/doc`'s in the `ft_index` member. This function has two special JavaScript functions you can call to add indexing info for your document.
 
@@ -140,7 +150,8 @@ Caveat:
 
 It may take a few seconds before the indexed results become available. There's no guarantee that a document has been indexed as soon as you commit it to the database.
 
-=== Supports ===
+Supports
+--------
 
 1. `q` - Requests with arbitrary AND/OR type of boolean logic.
 1. `limit` and `skip` parameters - For paging type stuff (Beware when not using a specified sort)
