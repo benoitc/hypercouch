@@ -16,6 +16,22 @@ There are a couple dependancies that should hopefully be easy to overcome. I hav
 1. [python-spidermonkey][pyspider] - **My version on github**
 1. [hypercouch][hypercouch] - This project?
 
+OS X python modules:
+
+    $ sudo port install py25-simplejson
+    $ sudo port install py25-httplib2
+
+Ubuntu:
+
+    $ sudo apt-get install simplejson
+    $ sudo apt-get isntall httplib2
+
+And couchdb-python:
+
+    $ svn checkout http://couchdb-python.googlecode.com/svn/trunk/ couchdb-python
+    $ cd couchdb-python
+    $ sudo python setup.py install
+
 For the moment I haven't performed this installation on Linux. Tomorrow I'll sit down and install on one of my severs but for now I'll just go over the OS X procedure and hope the Linux equivalent isn't too far off.
 
 Installation
@@ -23,12 +39,24 @@ Installation
 
 I won't go over installing CouchDB because it's pretty well covered on the [wiki][wiki]. If you need help with it check there or hop onto the IRC channel (#couchdb on irc.freenode.net) and ask questions.
 
+Linux People
+------------
+
+Make sure you have the python dev stuff installed for building extensions:
+
+    $ sudo apt-get install python2.5-dev
+
 HyperEstraier
 -------------
 
 HyperEstraier should probably be in your package manager. On OS X it's merely:
 
-    $ sudo port install hyperestraier
+    $ sudo port install libestraier-dev libqdbm-dev
+
+Ubuntu:
+
+    $ sudo apt-get install libestraier-dev
+
 
 Spidermonkey
 ------------
@@ -36,6 +64,10 @@ Spidermonkey
 Spidermonkey is similar
 
     $ sudo port install spidermonkey
+
+Ubuntu:
+
+    $ sudo apt-get install libmozjs-dev
 
 Activation Errors
 -----------------
