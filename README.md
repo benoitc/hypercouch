@@ -50,6 +50,8 @@ Hopefully that was the hard part. The rest of the stuff is just about getting th
 HyPy
 ----
 
+Get the source here: [http://hypy-source.goonmill.org/archive/tip.tar.gz][hypy-download]
+
 For me hypy was easy to install with the caveat that I had to make a minor tweak to `setup.py` to help it find HyperEstraier installed by `ports`. We just need to add `/opt/local/include` to the list of include directories:
 
 From: (About line 10 in Hypy's setup.py)
@@ -164,6 +166,7 @@ Supports
 [hyper]:http://hyperestraier.sourceforge.net/ "Hyper Estraier"
 [spider]:http://www.mozilla.org/js/spidermonkey/ "Spidermonkey"
 [hypy]:http://www.goonmill.org/hypy/ "Hypy"
+[hypy-download]:http://hypy-source.goonmill.org/archive/tip.tar.gz "Download Hypy"
 [pyspider]:http://github.com/davisp/python-spidermonkey/tree/master "Python Spidermonkey"
 [hypercouch]:http://github.com/davisp/python-spidermonkey/tree/master "HyperCouch"
 [hypersearching]:http://hyperestraier.sourceforge.net/uguide-en.html#searchcond "Hyper Estraier Searching"
